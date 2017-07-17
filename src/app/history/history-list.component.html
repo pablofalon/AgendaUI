@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="form-group col-md-offset-9">
+      <input type="form-control mySearch float-right" name="" value="Search">
+  </div>
+  
+  <div class="list-group" >  
+
+    <div class="row list-group-item" *ngFor="let item of agenda.histories">
+      <div class="content col-md-10">
+         {{item.content}} {{item.date}}
+      </div>
+
+      <div class="actionIcons col-md-2">
+        <a href="https://www.google.com.ar">
+          <i class="glyphicon glyphicon-pencil"></i>
+        </a>
+        <a href="https://www.google.com.ar">
+          <i class="glyphicon glyphicon-heart"></i>
+        </a>
+        <a href="https://www.google.com.ar">
+          <i class="glyphicon glyphicon-remove"></i>
+        </a>
+      </div>
+    
+    </div>   
+    
+  </div>
+</div>  
+

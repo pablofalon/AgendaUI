@@ -1,0 +1,16 @@
+.content{
+    background-color: black;
+    color:white;
+}
+
+.actionIcons{
+     text-align: right
+;}
+
+.glyphicon {
+        font-size: 17px;
+}
+
+.mySearch{
+  border-radius: 7px;
+}
