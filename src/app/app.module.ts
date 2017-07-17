@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,7 +21,12 @@ import { HistoryService } from './shared/history.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule  
+    HttpModule ,
+    RouterModule.forRoot([
+      {path: 'histories',component:HistoryListComponent},
+      {path: 'new',component:HistoryAddComponent},
+      {path: 'history/:id',component:HistoryDetailsComponent}
+    ]) 
   ],
   providers: [HistoryService],
   bootstrap: [AppComponent]

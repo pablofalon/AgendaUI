@@ -1,5 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {HistoryService} from '../shared/history.service';
+import {ActivatedRoute} from '@angular/router'
 
 import {IHistory} from './history'
 
@@ -10,11 +11,12 @@ import {IHistory} from './history'
 
 export class HistoryDetailsComponent implements OnInit{
       history:IHistory
-      constructor(private _service:HistoryService){
-
+      id:number
+      constructor(private _service:HistoryService,private _route:ActivatedRoute){
+          this.id = +this._route.snapshot.params['id'];
       }
       ngOnInit(){
-           this._service.getHistory()
+           this._service.getHistory(this.id)
         .subscribe(history=>this.history=history);
       }
 

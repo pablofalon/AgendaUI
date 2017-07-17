@@ -10,14 +10,14 @@ import { IAgenda } from '../agenda/agenda'
 
 @Injectable()
 export class HistoryService{
- private historyById="https://localhost:44300/History/1";
+ private historyById="https://localhost:44300/History";
  private completeAgendaURL="https://localhost:44300/Agenda/pablofalon";
  constructor(private _http:Http){
 
  }
 
- getHistory():Observable<IHistory>{
-     return this._http.get(this.historyById)
+ getHistory(id:number):Observable<IHistory>{
+     return this._http.get(this.historyById+'/'+id)
      .map((response:Response)=><IHistory>response.json())
      .do(data=>console.log('All: '+ JSON.stringify(data)))
     // .catch(this.handleError);
